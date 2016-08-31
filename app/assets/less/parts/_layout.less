@@ -1,0 +1,104 @@
+
+//
+// Nav bar
+//------------------------------------------------------------------------------
+nav.navbar {
+	margin-bottom:0px;
+	min-height:@navbar-height;
+	z-index:@zindex-navbar;
+	.navbar-brand {
+		padding:4px 4px 0px 4px;
+		height:@navbar-height;
+	}
+	.navbar-nav>li>a {
+		padding-top:9px;
+		padding-bottom:9px;
+		color:@navbar-text-color;
+	}
+	.navbar-toggle {
+		padding:0px;
+		padding-top:1px;
+	}
+}
+
+//
+// Bread crumbs bar
+//------------------------------------------------------------------------------
+.layout-bcrumbs {
+	background-color:@navbar-bg-color;
+	height:@bcrumbs-height;
+	z-index:@zindex-navbar - 2;
+	position:relative;
+	overflow:hidden;
+	ul.breadcrumb {
+		margin:0px;
+		padding:6px 10px;
+		li,li a {
+			color:@navbar-text-color;
+			font-size:11px;
+		}
+		li.active, li.active a {
+			color:@navbar-text-color-hover;
+		}
+	}
+}
+
+//
+// Layout content
+//------------------------------------------------------------------------------
+.layout-content {
+	position:fixed;
+	left:0;
+	top:@navbar-height + @bcrumbs-height;
+	right:0;
+	bottom:0;
+	overflow:auto;
+	padding:10px 10px;
+	z-index:@zindex-layout-content;
+	h1:first-child,h2:first-child,h3:first-child {
+		margin-top:0px;
+	}
+}
+
+//
+// Modals
+//------------------------------------------------------------------------------
+.modal {
+	top:@navbar-height + @bcrumbs-height;
+	.modal-header {
+		background-color:@gray-lighter;
+	}
+}
+
+//
+// Required form fields
+//------------------------------------------------------------------------------
+.form-group {
+	label {
+		font-weight:normal;
+	}
+	&.required {
+		label {
+			font-weight:bold;
+		}
+	}
+}
+.form-group.required label:before {
+	content:"\f069";
+	font-size:0.7em;
+	top:-3px;
+	position:relative;
+	color:@brand-danger;
+	font-family:FontAwesome;
+}
+
+//
+// Special font awesome icons
+//------------------------------------------------------------------------------
+.fa-cine:before { content:"\f008"; }
+.fa-pay:before { content:"\f155"; }
+.fa-identity:before { content:"\f007"; }
+.fa-pass:before { content:"\f145"; }
+.fa-gii:before { content:"\f085"; }
+.fa-debug:before { content:"\f188"; }
+.fa-rest:before { content:"\f0ad"; }

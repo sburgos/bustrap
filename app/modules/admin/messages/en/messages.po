@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Papaya\n"
+"POT-Creation-Date: 2014-11-20 11:18-0500\n"
+"PO-Revision-Date: 2014-11-20 11:19-0500\n"
+"Last-Translator: \n"
+"Language-Team: Papaya Developers\n"
+"Language: es_PE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: t:1c,2\n"
+"X-Poedit-SearchPath-0: ./../..\n"
+
+#: ../../admin/base/User.php:95 ../../admin/base/UserPermit.php:77
+msgctxt "orm/admin"
+msgid "ID"
+msgstr ""
+
+#: ../../admin/base/User.php:96
+msgctxt "orm/admin"
+msgid "Username"
+msgstr ""
+
+#: ../../admin/base/User.php:97
+msgctxt "orm/admin"
+msgid "Display Name"
+msgstr ""
+
+#: ../../admin/base/User.php:98
+msgctxt "orm/admin"
+msgid "Auth Key"
+msgstr ""
+
+#: ../../admin/base/User.php:99
+msgctxt "orm/admin"
+msgid "Hashed Password"
+msgstr ""
+
+#: ../../admin/base/User.php:100
+msgctxt "orm/admin"
+msgid "Active"
+msgstr ""
+
+#: ../../admin/base/User.php:101
+msgctxt "orm/admin"
+msgid "Created At"
+msgstr ""
+
+#: ../../admin/base/User.php:102
+msgctxt "orm/admin"
+msgid "Created By"
+msgstr ""
+
+#: ../../admin/base/User.php:103
+msgctxt "orm/admin"
+msgid "Updated At"
+msgstr ""
+
+#: ../../admin/base/User.php:104
+msgctxt "orm/admin"
+msgid "Updated By"
+msgstr ""
+
+#: ../../admin/base/UserPermit.php:78
+msgctxt "orm/admin"
+msgid "User ID"
+msgstr ""
+
+#: ../../admin/base/UserPermit.php:79
+msgctxt "orm/admin"
+msgid "Type"
+msgstr ""
+
+#: ../../admin/base/UserPermit.php:80
+msgctxt "orm/admin"
+msgid "Module"
+msgstr ""
+
+#: ../../admin/base/UserPermit.php:81
+msgctxt "orm/admin"
+msgid "Controller"
+msgstr ""
+
+#: ../../admin/base/UserPermit.php:82
+msgctxt "orm/admin"
+msgid "Action"
+msgstr ""
+
+#: ../../admin/base/UserPermit.php:83
+msgctxt "orm/admin"
+msgid "Parameters Json"
+msgstr ""
+
+#: ../../admin/base/UserPermit.php:84
+msgctxt "orm/admin"
+msgid "Method"
+msgstr ""
+
+#~ msgctxt "common"
+#~ msgid "{attribute} must be a valid json encoded string."
+#~ msgstr "{attribute} debe ser una cadena en formato json."
+
+#~ msgctxt "admin-login"
+#~ msgid "Login please"
+#~ msgstr "Ingresa ahora"
+
+#~ msgctxt "admin-logout"
+#~ msgid "Login now please"
+#~ msgstr "Ingresa ahora porfavor"

@@ -1,0 +1,146 @@
+<?php
+use yii\helpers\Html;
+use common\yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model orm\admin\RestClient */
+/* @var $form common\yii\widgets\ActiveForm */
+
+// 
+// Determine the form action
+//------------------------------------------------------------------------------
+if (!isset($formAction)) {
+	if ($model->isNewRecord)
+		$formAction = ['/admin/crud/rest-client/create'];
+	else {
+		$formAction = ['/admin/crud/rest-client/update'];
+		if (count($model->primaryKey()) == 1)
+		{
+			$modelPk = $model->primaryKey();
+			$pkKey = current($modelPk);
+			$formAction['id'] = $model->{$pkKey};
+		}
+		else { 
+			foreach ($model->primaryKey() as $key)
+				$formAction[$key] = $model->{$key};
+		}
+	}
+}
+
+// 
+// Determine if __goback should be appended to the form action
+//------------------------------------------------------------------------------
+if (isset($appendGoBack)) {
+	if ($appendGoBack === true)
+		$formAction['__goback'] = $_SERVER['REQUEST_URI'];
+	else if (is_string($appendGoBack))
+		$formAction['__goback'] = appendGoBack;
+} else if (isset($_GET['__goback'])) {
+	$formAction['__goback'] = $_GET['__goback'];
+}
+
+// 
+// Determine columns to hide
+//------------------------------------------------------------------------------
+if (!isset($hiddenColumns) || !is_array($hiddenColumns))
+	$hiddenColumns = [];
+
+// 
+// Determine form options
+//------------------------------------------------------------------------------
+if (!isset($formOptions) || !is_array($formOptions))
+	$formOptions = [];
+	
+// 
+// Determine submit container class
+//------------------------------------------------------------------------------
+if (!isset($submitContainerClass))
+	$submitContainerClass = "col-sm-10 col-sm-push-2";
+
+// 
+// Setup submitButton settings
+//------------------------------------------------------------------------------
+$submitButton = [
+	'label' => $model->isNewRecord ? 'Add' : 'Save',
+	'options' => [
+		'class' => 'btn ' . ($model->isNewRecord ? "btn-success" : "btn-primary"),
+	],
+];
+if ($formAction == ['index']) {
+	$submitButton['label'] = 'Search';
+	$submitButton['options']['class'] = "btn btn-info";
+}
+
+
+// 
+// Render the form
+//------------------------------------------------------------------------------
+$form = ActiveForm::begin(array_merge([
+	'action' => $formAction,
+	'options' => ['class' => 'crud-form'],
+], $formOptions)); 
+?>
+
+	<div class="row fields">
+	<?php if (in_array('id', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'id')->textInput(['maxlength' => 32])->hint('E.g. IOS_CINEPAPAYA_CONTENT') ?>
+	<?php if (in_array('id', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('secretToken', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'secretToken')->tokenInput(['maxlength' => 32])->hint('The secret token that will be used to allow access with this rest client id.') ?>
+	<?php if (in_array('secretToken', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('displayName', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'displayName')->textInput(['maxlength' => 50])->hint('Name for internal identification purposes.') ?>
+	<?php if (in_array('displayName', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('platform', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'platform')->textInput(['maxlength' => 32])->hint('E.g. iOS, Android, Web, Kiosk, etc.') ?>
+	<?php if (in_array('platform', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('version', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'version')->textInput(['maxlength' => 10])->hint('E.g. 1.0, 4.1, etc.') ?>
+	<?php if (in_array('version', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('sendSiftFingerprint', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'sendSiftFingerprint')->checkbox(null, false)->hint('If the fingerprint should be sent to sift science') ?>
+	<?php if (in_array('sendSiftFingerprint', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('active', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'active')->checkbox(null, false)->hint('If it should accept requests or not.') ?>
+	<?php if (in_array('active', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('ownerName', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'ownerName')->textInput(['maxlength' => 50])->hint('Name of the owner of this rest client. Normally it is Cinepapaya but it can be Cinemark etc. New users will belong to the ownerName of the rest client invoked.') ?>
+	<?php if (in_array('ownerName', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('allowCreditCards', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'allowCreditCards')->checkbox(null, false)->hint('If credit cards can be used with this client') ?>
+	<?php if (in_array('allowCreditCards', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('allowStoredCreditCards', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'allowStoredCreditCards')->checkbox(null, false)->hint('If stored credit cards can be used with this client') ?>
+	<?php if (in_array('allowStoredCreditCards', $hiddenColumns)) echo "</div>"; ?>
+
+	<?php if (in_array('allowPaypal', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'allowPaypal')->checkbox(null, false)->hint('If paypal can be used with this rest client') ?>
+	<?php if (in_array('allowPaypal', $hiddenColumns)) echo "</div>"; ?>
+
+	</div>
+
+	<div class="row actionbar">
+		<div class="<?= $submitContainerClass; ?>">
+			<?php if (isset($formAction['__goback'])) : ?>
+				<?= Html::a('Cancel', 
+					$formAction['__goback'], [
+						'class' => 'btn btn-default', 
+						'tabindex' => -1,
+						'onclick' => "if ($(this).parents('.modal').length == 0) return true; $(this).parents('.modal').modal('hide');return false;",
+					]
+				) ?>
+			<?php endif; ?>
+			<?= Html::submitButton($submitButton['label'], $submitButton['options']) ?>
+		</div>
+	</div>
+	
+<?php ActiveForm::end(); ?>

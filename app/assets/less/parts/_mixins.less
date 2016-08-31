@@ -1,0 +1,139 @@
+//
+// Import bootstrap mixins
+//------------------------------------------------------------------------------
+@import "../../../../common/assets/bootstrap-3.3.1/less/mixins.less";
+
+//
+// Custom button variant for more control
+//------------------------------------------------------------------------------
+.button-variant(@color; @background; @border; @colorH; @backgroundH; @borderH) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @colorH;
+    background-color: @backgroundH;
+        border-color: @borderH;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+//
+// Make an element keep it's aspect ratio. Keep in mind that if you want
+// to place content inside this element you place a div.content inside
+//
+// ====================
+//
+// Eg: 
+// .item {
+//		.keep-aspect-ratio(16,9); // Keep 16:9 aspect ratio
+// }
+//
+// To display a bg image
+//
+// 		<div class='item' style='bacgkround-image:url(...);'></div>
+//
+// To display some content you should place a single div inside
+//
+// 		<div class='item'>
+//			<div>SOME MORE HTML</div>
+// 		</div>
+//
+// Mix content and background:
+//
+//		<div class='item' style='bacgkround-image:url(...);'>
+//			<div class='content'>SOME MORE HTML</div>
+//		</div>
+//
+// ====================
+//
+// Note: This does not work on IE7 but bootstrap does not work either
+//-----------------------------------------------------------------------------
+.keep-aspect-ratio(
+	@ratioW; 
+	@ratioH; 
+	@overflow:hidden; 
+	@bg-position:center center;
+	@bg-repeat:no-repeat;
+	@bg-size:cover
+){
+	@ratio:(@ratioH / @ratioW * 100%);
+	position:relative;
+	width:100%;
+	overflow:hidden; // This it not required but recommended
+	background-position:@bg-position;
+	background-size:@bg-size;
+	background-repeat:@bg-repeat;
+	&:before {
+		content:"";
+		display:block;
+		padding-top:@ratio;
+	}
+	>div {
+		position:  absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		overflow:@overflow;
+		z-index:5;
+	}
+}
+.keep-aspect-ratio-vertical(
+	@ratioW; 
+	@ratioH; 
+	@overflow:hidden; 
+	@bg-position:center center;
+	@bg-repeat:no-repeat;
+	@bg-size:cover
+){
+	@ratio:(@ratioH / @ratioW * 100%);
+	position:relative;
+	height:100%;
+	overflow:hidden; // This it not required but recommended
+	background-position:@bg-position;
+	background-size:@bg-size;
+	background-repeat:@bg-repeat;
+	&:before {
+		content:"";
+		display:block;
+		padding-left:@ratio;
+	}
+	>div {
+		position:  absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		overflow:@overflow;
+		z-index:5;
+	}
+}

@@ -1,0 +1,166 @@
+//
+// Crud page title
+//------------------------------------------------------------------------------
+.crud-page-header {
+	margin-top:0px;
+	margin-bottom:0px;
+	background-color:@gray-lighter;
+	border:1px solid darken(@gray-lighter, 10%);
+	padding:10px 20px;
+	h1,h2,h3,h4,h5,h6 {
+		margin-top:0px;
+		margin-bottom:5px;
+	}
+	h1 { font-size:24px;}
+}
+
+//
+// Crud grid view
+//------------------------------------------------------------------------------
+.crud-grid-view{
+	padding-top:10px;
+	.summary {
+		background-color:@grid-th-bg-color;
+		color:darken(@grid-th-color, 25%);
+		padding:2px 8px;
+	}
+	>table.table {
+		border-top:1px solid lighten(@grid-th-bg-color, 15%);
+		>thead>tr>th, >tr>th {
+			padding-top:6px;
+			padding-bottom:6px;
+			vertical-align:middle;
+			background-color:@grid-th-bg-color;
+			border-color:lighten(@grid-th-bg-color, 15%);
+			&,a {
+				color:@grid-th-color;
+			}
+			a.asc:after, a.desc:after {
+				content:"\f15d";
+				font-family:FontAwesome;
+				font-size:12px;
+				margin-left:5px;
+				color:@brand-info;
+			}
+			a.desc:after {
+				content:"\f15e";
+			}
+		}
+		>tbody>tr>td, >tr>td {
+			padding-top:7px;
+			padding-bottom:6px;
+		}
+		>tbody>tr:hover, >tr:hover{
+			td {
+				background-color:@highlight-color;
+				background-color:fadeOut(@highlight-color, 60%);
+				&:hover {
+					background-color:fadeOut(@highlight-color, 30%);
+				}
+			}
+		}
+	}
+}
+
+//
+// Grid filter settings
+//------------------------------------------------------------------------------
+.table .filters > td {
+	padding:0px;
+	background-color:@grid-th-bg-color;
+	border-color:lighten(@grid-th-bg-color, 20%);
+	position:relative;
+	.form-control {
+		padding:3px 6px;
+		height:auto;
+		border:0px;
+		background-color:@grid-filter-bg-color;
+		color:@grid-filter-color;
+	}
+}
+.crud-nav-tabs {
+	margin:0px;
+	padding-top:10px;
+}
+
+
+//
+// Crud form
+//------------------------------------------------------------------------------
+.crud-form {
+	padding-top:10px;
+	.fields {
+		.control-label {
+			text-align:right;
+			padding-top:7px;
+			padding-bottom:7px;
+		}
+		.form-group {
+			margin-bottom:0px;
+			.clearfix();
+		}
+	}
+	.actionbar {
+		>div {
+			padding-top:8px;
+			border-top:1px solid @gray-lighter;
+		}
+		.btn, button {
+			min-width:80px;
+			padding-top:8px;
+			padding-bottom:8px;
+		}
+	}
+	.hint-block {
+		font-size:11px;
+		color:#aaa;
+	}
+}
+
+//
+// Modals
+//------------------------------------------------------------------------------
+.crud-modal-search {
+	.crud-form {
+		padding-top:0px;
+		.form-group {
+			width:50%;
+			float:left;
+		}
+	}
+}
+.crud-modal-add {
+	.crud-form {
+		padding-top:0px;
+	}
+}
+
+//
+// Crud detail view
+//------------------------------------------------------------------------------
+.crud-view-detail {
+	padding-top:10px;
+	.form-group {
+		margin:0px;
+		padding-bottom:2px;
+		.control-label {
+			background-color:@gray-lighter;
+			padding-bottom:8px;
+		}
+		.form-control-static {
+			border-left:1px solid @gray-lighter;
+			border-bottom:1px solid @gray-lighter;
+		}
+		.not-set {
+			color:darken(@gray-lighter,10%);
+			font-style:italic;
+		}
+	}
+}
+
+.prices-title-color{
+	background-color: #808080;
+}
+.prices-subtitle-color{
+	background-color: #9f9f9f;
+}

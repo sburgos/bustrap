@@ -1,0 +1,594 @@
+2016-04-20 01:44:35 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(858): yii\db\Connection->open()
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(845): yii\db\Connection->getMasterPdo()
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Command->prepare('<span class="ke...')
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/mysql/Schema.php(348): yii\db\Command->queryColumn()
+#8 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Schema.php(228): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#9 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/Generator.php(158): yii\db\Schema->getTableNames()
+#10 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#11 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): call_user_func(Object(Closure))
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#13 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject('[<span class="s...')
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#23 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#25 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#27 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#29 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#30 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#31 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#32 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#33 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#34 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(858): yii\db\Connection->open()
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(845): yii\db\Connection->getMasterPdo()
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Command->prepare('<span class="ke...')
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/mysql/Schema.php(348): yii\db\Command->queryColumn()
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Schema.php(228): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/Generator.php(158): yii\db\Schema->getTableNames()
+#8 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#9 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): call_user_func(Object(Closure))
+#10 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#11 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#13 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject('[<span class="s...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#23 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#27 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#32 {main}
+Additional Information:
+
+2016-04-20 01:44:35 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_COOKIE = [
+    '_csrf' => '6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa\";}'
+    'PHPSESSID' => '9618f1bca928b8ad6672f0166b3017b0'
+]
+
+$_SERVER = [
+    'YII_ENV' => 'dev'
+    'HTTP_HOST' => 'smpcommerce.vh'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'
+    'HTTP_REFERER' => 'http://smpcommerce.vh/index.php?r=gii'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'
+    'HTTP_COOKIE' => '_csrf=6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa%22%3B%7D; PHPSESSID=9618f1bca928b8ad6672f0166b3017b0'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) PHP/5.5.31 LibreSSL/2.2.6'
+    'SERVER_NAME' => 'smpcommerce.vh'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/Holosens01/vhosts/smpcommerce/web/index.php'
+    'REMOTE_PORT' => '50440'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1461116675.886
+    'REQUEST_TIME' => 1461116675
+    'argv' => [
+        0 => 'r=gii%2Fdefault%2Fview&id=model'
+    ]
+    'argc' => 1
+]
+2016-04-20 01:44:56 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=127....', 'root', 'root', NULL)
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(858): yii\db\Connection->open()
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(845): yii\db\Connection->getMasterPdo()
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Command->prepare('<span class="ke...')
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/mysql/Schema.php(348): yii\db\Command->queryColumn()
+#8 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Schema.php(228): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#9 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/Generator.php(158): yii\db\Schema->getTableNames()
+#10 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#11 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): call_user_func(Object(Closure))
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#13 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject('[<span class="s...')
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#23 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#25 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#27 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#29 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#30 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#31 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#32 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#33 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#34 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(858): yii\db\Connection->open()
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(845): yii\db\Connection->getMasterPdo()
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Command->prepare('<span class="ke...')
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/mysql/Schema.php(348): yii\db\Command->queryColumn()
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Schema.php(228): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/Generator.php(158): yii\db\Schema->getTableNames()
+#8 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#9 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): call_user_func(Object(Closure))
+#10 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#11 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#13 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject('[<span class="s...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#23 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#27 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#32 {main}
+Additional Information:
+
+2016-04-20 01:44:56 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_COOKIE = [
+    '_csrf' => '6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa\";}'
+    'PHPSESSID' => '9618f1bca928b8ad6672f0166b3017b0'
+]
+
+$_SERVER = [
+    'YII_ENV' => 'dev'
+    'HTTP_HOST' => 'smpcommerce.vh'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'
+    'HTTP_REFERER' => 'http://smpcommerce.vh/index.php?r=gii'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'
+    'HTTP_COOKIE' => '_csrf=6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa%22%3B%7D; PHPSESSID=9618f1bca928b8ad6672f0166b3017b0'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) PHP/5.5.31 LibreSSL/2.2.6'
+    'SERVER_NAME' => 'smpcommerce.vh'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/Holosens01/vhosts/smpcommerce/web/index.php'
+    'REMOTE_PORT' => '50446'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1461116696.728
+    'REQUEST_TIME' => 1461116696
+    'argv' => [
+        0 => 'r=gii%2Fdefault%2Fview&id=model'
+    ]
+    'argc' => 1
+]
+2016-04-20 01:45:03 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=127....', 'root', 'root', NULL)
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(858): yii\db\Connection->open()
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(845): yii\db\Connection->getMasterPdo()
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Command->prepare('<span class="ke...')
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/mysql/Schema.php(348): yii\db\Command->queryColumn()
+#8 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Schema.php(228): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#9 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/Generator.php(158): yii\db\Schema->getTableNames()
+#10 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#11 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): call_user_func(Object(Closure))
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#13 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject('[<span class="s...')
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#23 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#25 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#27 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#29 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#30 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#31 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#32 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#33 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#34 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(858): yii\db\Connection->open()
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Connection.php(845): yii\db\Connection->getMasterPdo()
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Command->prepare('<span class="ke...')
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/mysql/Schema.php(348): yii\db\Command->queryColumn()
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/db/Schema.php(228): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/Generator.php(158): yii\db\Schema->getTableNames()
+#8 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#9 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): call_user_func(Object(Closure))
+#10 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#11 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#13 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject('[<span class="s...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#23 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#27 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#32 {main}
+Additional Information:
+
+2016-04-20 01:45:03 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_COOKIE = [
+    '_csrf' => '6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa\";}'
+    'PHPSESSID' => '9618f1bca928b8ad6672f0166b3017b0'
+]
+
+$_SERVER = [
+    'YII_ENV' => 'dev'
+    'HTTP_HOST' => 'smpcommerce.vh'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'
+    'HTTP_REFERER' => 'http://smpcommerce.vh/index.php?r=gii'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'
+    'HTTP_COOKIE' => '_csrf=6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa%22%3B%7D; PHPSESSID=9618f1bca928b8ad6672f0166b3017b0'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) PHP/5.5.31 LibreSSL/2.2.6'
+    'SERVER_NAME' => 'smpcommerce.vh'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/Holosens01/vhosts/smpcommerce/web/index.php'
+    'REMOTE_PORT' => '50448'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1461116703.876
+    'REQUEST_TIME' => 1461116703
+    'argv' => [
+        0 => 'r=gii%2Fdefault%2Fview&id=model'
+    ]
+    'argc' => 1
+]
+2016-04-20 01:45:07 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: /Users/Holosens01/vhosts/smpcommerce/app/vendor/bower/jquery/dist' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetManager.php:452
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetBundle.php(179): yii\web\AssetManager->publish('/Users/Holosens...', Array)
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetBundle.php(123): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...')
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/View.php(439): yii\web\AssetBundle::register(Object(yii\web\View))
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(71): yii\web\View->registerJs('yii.gii.autocom...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): yii\gii\components\ActiveField->autoComplete(Array)
+#8 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#9 [internal function]: yii\base\Object->__construct(Array)
+#10 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs(Array)
+#11 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('yii\\gii\\compone...', Array, Array)
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\gii\\compone...', Array, Array)
+#13 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject(Array)
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), 'tableName')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/Users/Holosens...', Array)
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/Users/Holosens...', Array)
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/Users/Holosens...', Array)
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/Users/Holosens...', Array, Object(yii\gii\controllers\DefaultController))
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('view', Array)
+#23 [internal function]: yii\gii\controllers\DefaultController->actionView('model')
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#25 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#27 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('gii/default/vie...', Array)
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#30 {main}
+2016-04-20 01:45:07 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_COOKIE = [
+    '_csrf' => '6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa\";}'
+    'PHPSESSID' => '9618f1bca928b8ad6672f0166b3017b0'
+]
+
+$_SERVER = [
+    'YII_ENV' => 'dev'
+    'HTTP_HOST' => 'smpcommerce.vh'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'
+    'HTTP_REFERER' => 'http://smpcommerce.vh/index.php?r=gii'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'
+    'HTTP_COOKIE' => '_csrf=6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa%22%3B%7D; PHPSESSID=9618f1bca928b8ad6672f0166b3017b0'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) PHP/5.5.31 LibreSSL/2.2.6'
+    'SERVER_NAME' => 'smpcommerce.vh'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/Holosens01/vhosts/smpcommerce/web/index.php'
+    'REMOTE_PORT' => '50449'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1461116707.508
+    'REQUEST_TIME' => 1461116707
+    'argv' => [
+        0 => 'r=gii%2Fdefault%2Fview&id=model'
+    ]
+    'argc' => 1
+]
+2016-04-20 01:45:11 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: /Users/Holosens01/vhosts/smpcommerce/app/vendor/bower/jquery/dist' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetManager.php:452
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetBundle.php(179): yii\web\AssetManager->publish('/Users/Holosens...', Array)
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/AssetBundle.php(123): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...')
+#5 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/View.php(439): yii\web\AssetBundle::register(Object(yii\web\View))
+#6 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(71): yii\web\View->registerJs('yii.gii.autocom...')
+#7 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/components/ActiveField.php(41): yii\gii\components\ActiveField->autoComplete(Array)
+#8 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Object.php(107): yii\gii\components\ActiveField->init()
+#9 [internal function]: yii\base\Object->__construct(Array)
+#10 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(374): ReflectionClass->newInstanceArgs(Array)
+#11 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/di/Container.php(153): yii\di\Container->build('yii\\gii\\compone...', Array, Array)
+#12 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\gii\\compone...', Array, Array)
+#13 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/widgets/ActiveForm.php(288): yii\BaseYii::createObject(Array)
+#14 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/generators/model/form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), 'tableName')
+#15 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#16 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/Users/Holosens...', Array)
+#17 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/Users/Holosens...', Array)
+#18 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(325): require('/Users/Holosens...')
+#19 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/Users/Holosens...', Array)
+#20 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/Users/Holosens...', Array, Object(yii\gii\controllers\DefaultController))
+#21 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#22 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(61): yii\base\Controller->render('view', Array)
+#23 [internal function]: yii\gii\controllers\DefaultController->actionView('model')
+#24 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#25 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#26 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#27 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('gii/default/vie...', Array)
+#28 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#30 {main}
+2016-04-20 01:45:11 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_COOKIE = [
+    '_csrf' => '6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa\";}'
+    'PHPSESSID' => '9618f1bca928b8ad6672f0166b3017b0'
+]
+
+$_SERVER = [
+    'YII_ENV' => 'dev'
+    'HTTP_HOST' => 'smpcommerce.vh'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'
+    'HTTP_REFERER' => 'http://smpcommerce.vh/index.php?r=gii'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'
+    'HTTP_COOKIE' => '_csrf=6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa%22%3B%7D; PHPSESSID=9618f1bca928b8ad6672f0166b3017b0'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) PHP/5.5.31 LibreSSL/2.2.6'
+    'SERVER_NAME' => 'smpcommerce.vh'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/Holosens01/vhosts/smpcommerce/web/index.php'
+    'REMOTE_PORT' => '50451'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1461116711.492
+    'REQUEST_TIME' => 1461116711
+    'argv' => [
+        0 => 'r=gii%2Fdefault%2Fview&id=model'
+    ]
+    'argc' => 1
+]
+2016-04-20 01:45:15 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "".' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Module.php:460
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#1 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /Users/Holosens01/vhosts/smpcommerce/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/Holosens01/vhosts/smpcommerce/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-04-20 01:45:15 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa\";}'
+    'PHPSESSID' => '9618f1bca928b8ad6672f0166b3017b0'
+]
+
+$_SERVER = [
+    'YII_ENV' => 'dev'
+    'HTTP_HOST' => 'smpcommerce.vh'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'
+    'HTTP_COOKIE' => '_csrf=6a5d5b86de0df8bdefa35934bc92264ac0386cd119f6a159b1b8f6397e7470f0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hWrjF2uf0odJW4KFptWSoIfUQCxx2YKa%22%3B%7D; PHPSESSID=9618f1bca928b8ad6672f0166b3017b0'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) PHP/5.5.31 LibreSSL/2.2.6'
+    'SERVER_NAME' => 'smpcommerce.vh'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/Users/Holosens01/vhosts/smpcommerce/web/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/Holosens01/vhosts/smpcommerce/web/index.php'
+    'REMOTE_PORT' => '50453'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1461116715.404
+    'REQUEST_TIME' => 1461116715
+    'argv' => []
+    'argc' => 0
+]

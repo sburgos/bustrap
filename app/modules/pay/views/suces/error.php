@@ -1,0 +1,1 @@
+<h1 style="color:#aaa">Error ticket no existe o no está activo...</h1>
