@@ -9,7 +9,7 @@ echo $form->field($generator, 'moduleID', ['inputOptions' => [
 	'class' => 'form-control',
 	'autofocus' => 'autofocus',
 	'onchange' => 'autoPopulateModel(this);'
-]])->hint("<button type='button' class='btn btn-xs' onclick='{$onClick}'>event</button>
+]])->hint("<button type='button' class='btn btn-xs' onclick='{$onClick}'>bus</button>
     <button type='button' class='btn btn-xs' onclick='{$onClick}'>superadmin</button> ", ["style" => "display:block;"]);
 echo $form->field($generator, 'modelClass', ['inputOptions' => [
 	'class' => 'form-control',
@@ -33,8 +33,8 @@ function autoPopulateModel(modelInput)
 {
 	var moduleName = $(modelInput).val();
 	var defClass = "?";
-	if (moduleName == "event")
-		defClass = "Event";
+	if (moduleName == "bus")
+		defClass = "Bus";
     else if (moduleName == "superadmin")
         defClass = "Admin";
 	$("#<?= Html::getInputId($generator, 'modelClass') ?>").val("orm\\" + moduleName + "\\" + defClass);

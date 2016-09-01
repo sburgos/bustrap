@@ -26,15 +26,6 @@ class Module extends \app\base\Module
 					['label' => 'Cuentas', 'url' => ['/admin/crud/user-admin/index']],
 				],
 			],
-			'Eventos' => [
-				'label' => 'Eventos',
-				'items' => [
-					['label' => 'Organizadores', 'url' => ['/event/crud/manager/index']],
-					['label' => 'Eventos', 'url' => ['/event/crud/event/index']],
-					['label' => 'Tickets', 'url' => ['/event/crud/ticket/index']],
-					['label' => 'Asistentes', 'url' => ['/event/crud/assistant/index']],
-				],
-			],
 		];
 	}
 }

@@ -15,7 +15,7 @@ echo $form->field($generator, 'module', ['inputOptions' => [
 	'class' => 'form-control',
 	'autofocus' => 'autofocus',
 	'onkeyup' => 'populateModule(this);'
-]])->hint("<button type='button' class='btn btn-xs' onclick='{$onClick}'>event</button>
+]])->hint("<button type='button' class='btn btn-xs' onclick='{$onClick}'>bus</button>
     <button type='button' class='btn btn-xs' onclick='{$onClick}'>admin</button> ", ["style" => "display:block;"]);
 echo $form->field($generator, 'ns');
 echo $form->field($generator, 'db');
@@ -38,7 +38,7 @@ function populateModule()
 {
 	var moduleName = $("#<?= $ids['module'] ?>").val();
 	var moduleNameCap = moduleName.charAt(0).toUpperCase() + moduleName.slice(1);
-	if (moduleName == 'event')
+	if (moduleName == 'bus')
 		$("#<?= $ids['db'] ?>").val("db");
     else if (moduleName == 'admin')
         $("#<?= $ids['db'] ?>").val("db");

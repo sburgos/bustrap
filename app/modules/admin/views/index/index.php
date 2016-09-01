@@ -20,7 +20,7 @@ $this->title = 'Admin - Cinepapaya';
 			</a>
 		</div>
 	<?php endforeach; endif;?>
-	<?php if(\Yii::$app->user->id == 1): ?>
+	<?php if(false): ?>
 		<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2" style="margin-bottom:15px;">
 			<a href="/admin/asociar" class="btn btn-default btn-block">
 				<h4 style="margin:0px;padding:8px;">

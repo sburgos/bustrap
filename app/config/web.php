@@ -155,33 +155,22 @@ $config = [
 				],
 			],
 		],
-        'event' => [
-            'class' => 'modules\event\Module',
-            'title' => 'Event',
+        'bus' => [
+            'class' => 'modules\bus\Module',
+            'title' => 'Bus',
             'modules' => [
                 'crud' => [
-                    'class' => 'crud\event\Module',
-                    'controllerNamespace' => 'crud\event\controllers',
+                    'class' => 'crud\bus\Module',
+                    'controllerNamespace' => 'crud\bus\controllers',
                 ],
             ],
         ],
-        'events' => [
-            'class' => 'modules\events\Module',
-            'title' => 'Mis Eventos',
-            'modules' => [
-            ],
-        ],
-		'pay' => [
-			'class' => 'modules\pay\Module',
-			'title' => 'Pay',
-			'modules' => [			],
-		],
 	],
 ];
 
 //if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
-  /* $config['bootstrap'][] = 'debug';
+ $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
     ];
@@ -197,7 +186,7 @@ $config = [
 					'class' => 'common\yii\gii\generators\crud\Generator'
 				]
 			]
-    ];*/
+    ];
 //}
 
 return $config;
