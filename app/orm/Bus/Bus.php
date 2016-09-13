@@ -66,12 +66,11 @@ class Bus extends \yii\db\ActiveRecord
     {
         return [
 			'trim' => [['name', 'busImage', 'extraInfo'], 'trim'],
-			'required' => [['idLine', 'name', 'busImage', 'extraInfo'], 'required'],
+			'required' => [['idLine', 'busImage', 'extraInfo'], 'required'],
 			'integer' => [['idLine'], 'integer'],
 			'string' => [['extraInfo'], 'string'],
 			'boolean' => [['active'], 'boolean'],
-			'string_45' => [['name'], 'string', 'max' => 45],
-			'string_200' => [['busImage'], 'string', 'max' => 200],
+			'string_200' => [['name', 'busImage'], 'string', 'max' => 200],
         ];
     }
 

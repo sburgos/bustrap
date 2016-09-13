@@ -10,6 +10,7 @@ use Yii;
  * @property integer $lineId
  * @property string $latitude
  * @property string $longitude
+ * @property boolean $ida
  *
  * @property Line $line
  * @property SmartRoutes[] $smartRoutes
@@ -67,6 +68,7 @@ class Route extends \yii\db\ActiveRecord
 			'trim' => [['latitude', 'longitude'], 'trim'],
 			'required' => [['lineId', 'latitude', 'longitude'], 'required'],
 			'integer' => [['lineId'], 'integer'],
+			'boolean' => [['ida'], 'boolean'],
 			'string_45' => [['latitude', 'longitude'], 'string', 'max' => 45],
         ];
     }
@@ -81,6 +83,7 @@ class Route extends \yii\db\ActiveRecord
             'lineId' => 'Line ID',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
+            'ida' => 'Ida',
         ];
     }
     

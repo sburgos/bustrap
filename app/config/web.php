@@ -165,6 +165,16 @@ $config = [
                 ],
             ],
         ],
+        'routes' => [
+            'class' => 'modules\routes\Module',
+            'title' => 'Routes',
+            'modules' => [],
+        ],
+        'test' => [
+            'class' => 'modules\test\Module',
+            'title' => 'Test',
+            'modules' => [],
+        ],
 	],
 ];
 

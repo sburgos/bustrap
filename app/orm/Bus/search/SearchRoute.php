@@ -30,6 +30,7 @@ class SearchRoute extends Route
         return [
             [['id', 'lineId'], 'integer'],
             [['latitude', 'longitude'], 'safe'],
+            [['ida'], 'boolean'],
         ];
     }
 
@@ -66,6 +67,7 @@ class SearchRoute extends Route
         $query->andFilterWhere([
             'id' => $this->id,
             'lineId' => $this->lineId,
+            'ida' => $this->ida,
         ]);
 
         $query->andFilterWhere(['like', 'latitude', $this->latitude])

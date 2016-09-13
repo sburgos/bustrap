@@ -65,6 +65,7 @@ if (!isset($onlyDetail)) {
 		'lineId',
 		'latitude',
 		'longitude',
+		'ida:boolean',
 	],
 ]) ?>
 

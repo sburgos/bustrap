@@ -25,6 +25,6 @@ FontAwesomeAsset::register($this);
 	</div>
 	<?php $this->endBody() ?>
 </body>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmM9_C0bPw2c1Vtf8DREdUi2FwBtYiAKU&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVN07EXkJ1KIKGJUE5TtB8Yixj4NX0JcE&callback=initMap" async defer></script>
 </html>
 <?php $this->endPage() ?>

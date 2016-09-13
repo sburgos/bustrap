@@ -89,7 +89,7 @@ $form = ActiveForm::begin(array_merge([
 	<?php if (in_array('idLine', $hiddenColumns)) echo "</div>"; ?>
 
 	<?php if (in_array('name', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
-		<?= $form->field($model, 'name')->textInput(['maxlength' => 45]) ?>
+		<?= $form->field($model, 'name')->textInput(['maxlength' => 200]) ?>
 	<?php if (in_array('name', $hiddenColumns)) echo "</div>"; ?>
 
 	<?php if (in_array('busImage', $hiddenColumns)) echo "<div style='display:none;'>"; ?>

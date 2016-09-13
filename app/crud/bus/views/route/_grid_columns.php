@@ -49,6 +49,18 @@ $allColumns = [
         'style' => '',
     ],
 ],
+'ida' => [
+    'class' => 'common\\yii\\grid\\DataColumn',
+    'attribute' => 'ida',
+    'format' => 'boolean',
+    'isPrimaryKey' => false,
+    'contentOptions' => [
+        'style' => 'width:10px;text-align:center;',
+    ],
+    'headerOptions' => [
+        'style' => 'width:10px;text-align:center;',
+    ],
+],
 'line' => [
     'class' => 'yii\\grid\\DataColumn',
     'attribute' => 'line.name',
@@ -71,6 +83,7 @@ return [
 //		'lineId' => $allColumns['lineId'],
 		'latitude' => $allColumns['latitude'],
 		'longitude' => $allColumns['longitude'],
+		'ida' => $allColumns['ida'],
 	
 	],
 ];

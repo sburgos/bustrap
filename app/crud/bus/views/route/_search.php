@@ -27,6 +27,8 @@ $form = ActiveForm::begin([
 
 	<?= $form->field($model, 'longitude') ?>
 
+	<?= $form->field($model, 'ida')->checkbox(null, true, true) ?>
+
 	</div>
 
 	<div class="row actionbar">
