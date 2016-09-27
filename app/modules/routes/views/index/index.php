@@ -10,6 +10,7 @@
         // This example creates a 2-pixel-wide red polyline showing the path of William
         // Kingsford Smith's first trans-Pacific flight between Oakland, CA, and
         // Brisbane, Australia.
+        var markers = [];
 
         function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
@@ -28,9 +29,40 @@
                 });
 
                 flightPath.setMap(map);
+
+                google.maps.event.addListener(map, 'click', function(event) {
+                        placeMarker(event.latLng);
+                });
+
+                function placeMarker(location) {
+                        if(markers.length == 2)
+                        {
+                                alert("Ya marcaste inicio y fin");
+                        }
+                        else
+                        {
+                                var marker = new google.maps.Marker({
+                                        position: location,
+                                        map: map
+                                });
+
+                                markers[markers.length] = marker;
+                        }
+                }
+        }
+
+        function getMakers()
+        {
+                pos = '';
+                for(var i = 0; i < markers.length; i++)
+                {
+                        pos+=markers[i].getPosition().lat()+';'+markers[i].getPosition().lng()+'|';
+                }
+                location.href = '/routes/index/short?pos='+pos;
         }
 
 </script>
 <?php
 $this->registerJS('$(\'.empresa\').change(function(){location.href="?id="+$(this).val()});');
 ?>
+<button onclick="getMakers()">Buscar Ruta</button>

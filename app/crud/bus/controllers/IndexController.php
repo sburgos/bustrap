@@ -17,8 +17,10 @@ class IndexController extends \yii\web\Controller
     public function actionIndex()
     {
     	$allLinks = [
+			'agenda' => ['label' => 'Agendas', 'url' => ['agenda/index']],
 			'bus' => ['label' => 'Buses', 'url' => ['bus/index']],
 			'data' => ['label' => 'Datas', 'url' => ['data/index']],
+			'invitados' => ['label' => 'Invitados', 'url' => ['invitados/index']],
 			'line' => ['label' => 'Lines', 'url' => ['line/index']],
 			'route' => ['label' => 'Routes', 'url' => ['route/index']],
 			'smart-node' => ['label' => 'Smart Nodes', 'url' => ['smart-node/index']],
