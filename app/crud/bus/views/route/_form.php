@@ -100,6 +100,10 @@ $form = ActiveForm::begin(array_merge([
 		<?= $form->field($model, 'ida')->checkbox(null, false) ?>
 	<?php if (in_array('ida', $hiddenColumns)) echo "</div>"; ?>
 
+	<?php if (in_array('name', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'name')->textInput(['maxlength' => 200]) ?>
+	<?php if (in_array('name', $hiddenColumns)) echo "</div>"; ?>
+
 	</div>
 
 	<div class="row actionbar">

@@ -31,6 +31,8 @@ $form = ActiveForm::begin([
 
 	<?= $form->field($model, 'active')->checkbox(null, true, true) ?>
 
+	<?= $form->field($model, 'mode') ?>
+
 	</div>
 
 	<div class="row actionbar">

@@ -39,7 +39,7 @@ $allColumns = [
 ],
 'idRoute0' => [
     'class' => 'yii\\grid\\DataColumn',
-    'attribute' => 'idRoute0.latitude',
+    'attribute' => 'idRoute0.name',
     'format' => 'text',
     'contentOptions' => [
         'style' => 'text-align:left;',

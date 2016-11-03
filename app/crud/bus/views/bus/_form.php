@@ -104,6 +104,10 @@ $form = ActiveForm::begin(array_merge([
 		<?= $form->field($model, 'active')->checkbox(null, false) ?>
 	<?php if (in_array('active', $hiddenColumns)) echo "</div>"; ?>
 
+	<?php if (in_array('mode', $hiddenColumns)) echo "<div style='display:none;'>"; ?>
+		<?= $form->field($model, 'mode')->textInput(['maxlength' => 100]) ?>
+	<?php if (in_array('mode', $hiddenColumns)) echo "</div>"; ?>
+
 	</div>
 
 	<div class="row actionbar">

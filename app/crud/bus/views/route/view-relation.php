@@ -12,7 +12,7 @@ use common\yii\gii\generators\crud\event\CrudEvent;
 /* @var $this yii\web\View */
 /* @var $model orm\bus\Route */
 
-$this->title = 'Route' . ": " . $model->latitude;
+$this->title = 'Route' . ": " . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Routes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

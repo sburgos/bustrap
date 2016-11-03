@@ -73,6 +73,18 @@ $allColumns = [
         'style' => 'width:10px;text-align:center;',
     ],
 ],
+'mode' => [
+    'class' => 'common\\yii\\grid\\DataColumn',
+    'attribute' => 'mode',
+    'format' => 'text',
+    'isPrimaryKey' => false,
+    'contentOptions' => [
+        'style' => '',
+    ],
+    'headerOptions' => [
+        'style' => '',
+    ],
+],
 'idLine0' => [
     'class' => 'yii\\grid\\DataColumn',
     'attribute' => 'idLine0.name',
@@ -96,6 +108,7 @@ return [
 		'busImage' => $allColumns['busImage'],
 // 		'extraInfo' => $allColumns['extraInfo'],
 		'active' => $allColumns['active'],
+		'mode' => $allColumns['mode'],
 	
 	],
 ];

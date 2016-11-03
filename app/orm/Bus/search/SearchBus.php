@@ -29,7 +29,7 @@ class SearchBus extends Bus
     {
         return [
             [['id', 'idLine'], 'integer'],
-            [['name', 'busImage', 'extraInfo'], 'safe'],
+            [['name', 'busImage', 'extraInfo', 'mode'], 'safe'],
             [['active'], 'boolean'],
         ];
     }
@@ -72,7 +72,8 @@ class SearchBus extends Bus
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'busImage', $this->busImage])
-            ->andFilterWhere(['like', 'extraInfo', $this->extraInfo]);
+            ->andFilterWhere(['like', 'extraInfo', $this->extraInfo])
+            ->andFilterWhere(['like', 'mode', $this->mode]);
 
         return $dataProvider;
     }

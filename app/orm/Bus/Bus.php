@@ -12,6 +12,7 @@ use Yii;
  * @property string $busImage
  * @property string $extraInfo
  * @property boolean $active
+ * @property string $mode
  *
  * @property Line $idLine0
  */
@@ -65,12 +66,13 @@ class Bus extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-			'trim' => [['name', 'busImage', 'extraInfo'], 'trim'],
-			'required' => [['idLine', 'busImage', 'extraInfo'], 'required'],
+			'trim' => [['name', 'busImage', 'extraInfo', 'mode'], 'trim'],
+			'required' => [['idLine', 'name', 'busImage', 'extraInfo', 'mode'], 'required'],
 			'integer' => [['idLine'], 'integer'],
 			'string' => [['extraInfo'], 'string'],
 			'boolean' => [['active'], 'boolean'],
 			'string_200' => [['name', 'busImage'], 'string', 'max' => 200],
+			'string_100' => [['mode'], 'string', 'max' => 100],
         ];
     }
 
@@ -86,6 +88,7 @@ class Bus extends \yii\db\ActiveRecord
             'busImage' => 'Bus Image',
             'extraInfo' => 'Extra Info',
             'active' => 'Active',
+            'mode' => 'Mode',
         ];
     }
     

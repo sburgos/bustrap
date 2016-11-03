@@ -1,7 +1,7 @@
 <ul>
     <?php
-        foreach($bus as $b):
+        foreach($bus as $k => $v):
     ?>
-            <li><a href="/routes?id=<?= $b['id']; ?>&ida=<?= $b['ida']?>"><?= $b['name'] ?> (<?= ($b['ida'])?'ida':'vuelta' ?>)</a></li>
+            <li><a href="/routes/index/short?id=<?= $k; ?>&pos=<?= $_GET['pos']?>"><?= $v['distance'] ?> (Necesitas tomar: <?= count($v['route']) ?>)</a></li>
     <?php endforeach; ?>
 </ul>

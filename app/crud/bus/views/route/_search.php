@@ -29,6 +29,8 @@ $form = ActiveForm::begin([
 
 	<?= $form->field($model, 'ida')->checkbox(null, true, true) ?>
 
+	<?= $form->field($model, 'name') ?>
+
 	</div>
 
 	<div class="row actionbar">

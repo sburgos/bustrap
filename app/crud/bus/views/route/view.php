@@ -9,7 +9,7 @@ use common\yii\gii\generators\crud\event\CrudEvent;
 /* @var $model orm\bus\Route */
 
 if (!isset($onlyDetail)) {
-	$this->title = 'Route' . ": " . $model->latitude;
+	$this->title = 'Route' . ": " . $model->name;
 	$this->params['breadcrumbs'][] = ['label' => 'Routes', 'url' => ['index']];
 	$this->params['breadcrumbs'][] = $this->title;
 }
@@ -66,6 +66,7 @@ if (!isset($onlyDetail)) {
 		'latitude',
 		'longitude',
 		'ida:boolean',
+		'name',
 	],
 ]) ?>
 

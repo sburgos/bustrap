@@ -67,6 +67,7 @@ if (!isset($onlyDetail)) {
 		'busImage',
 		'extraInfo:ntext',
 		'active:boolean',
+		'mode',
 	],
 ]) ?>
 

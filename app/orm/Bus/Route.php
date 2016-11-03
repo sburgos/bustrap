@@ -11,13 +11,14 @@ use Yii;
  * @property string $latitude
  * @property string $longitude
  * @property boolean $ida
+ * @property string $name
  *
  * @property Line $line
  * @property SmartRoutes[] $smartRoutes
  */
 class Route extends \yii\db\ActiveRecord
 {
-	public static $__AJAX_LABEL_FIELDS_COMMA_SEPARATED = 'latitude';
+	public static $__AJAX_LABEL_FIELDS_COMMA_SEPARATED = 'name';
 	public static $__AJAX_LABEL_FORMAT = "%s";
 	
 	
@@ -65,11 +66,12 @@ class Route extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-			'trim' => [['latitude', 'longitude'], 'trim'],
-			'required' => [['lineId', 'latitude', 'longitude'], 'required'],
+			'trim' => [['latitude', 'longitude', 'name'], 'trim'],
+			'required' => [['lineId', 'latitude', 'longitude', 'name'], 'required'],
 			'integer' => [['lineId'], 'integer'],
 			'boolean' => [['ida'], 'boolean'],
 			'string_45' => [['latitude', 'longitude'], 'string', 'max' => 45],
+			'string_200' => [['name'], 'string', 'max' => 200],
         ];
     }
 
@@ -84,6 +86,7 @@ class Route extends \yii\db\ActiveRecord
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
             'ida' => 'Ida',
+            'name' => 'Name',
         ];
     }
     
@@ -95,7 +98,7 @@ class Route extends \yii\db\ActiveRecord
     {
     	if (empty($fields))
     	{
-    		$labelFields = ['latitude'];
+    		$labelFields = ['name'];
 			$labelFormat = "%s";
 		}
 		else

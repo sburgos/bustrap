@@ -29,7 +29,7 @@ class SearchRoute extends Route
     {
         return [
             [['id', 'lineId'], 'integer'],
-            [['latitude', 'longitude'], 'safe'],
+            [['latitude', 'longitude', 'name'], 'safe'],
             [['ida'], 'boolean'],
         ];
     }
@@ -71,7 +71,8 @@ class SearchRoute extends Route
         ]);
 
         $query->andFilterWhere(['like', 'latitude', $this->latitude])
-            ->andFilterWhere(['like', 'longitude', $this->longitude]);
+            ->andFilterWhere(['like', 'longitude', $this->longitude])
+            ->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }
