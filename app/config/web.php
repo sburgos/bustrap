@@ -175,10 +175,14 @@ $config = [
             'title' => 'Test',
             'modules' => [],
         ],
+		'app'   => [
+			'class' => 'modules\app\Module',
+			'title' => 'App',
+		]
 	],
 ];
 
-//if (YII_ENV_DEV) {
+if (false) {
     // configuration adjustments for 'dev' environment
  $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
@@ -197,6 +201,6 @@ $config = [
 				]
 			]
     ];
-//}
+}
 
 return $config;
