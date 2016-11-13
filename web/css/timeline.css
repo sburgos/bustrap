@@ -2,6 +2,10 @@
     margin-top: 10px;
     margin-left: 10px;
     display: inline-block;
+
+    width: 90%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .stepwizard-row {

@@ -574,7 +574,7 @@
 		<div class="panel-collapse collapse in" role="tabpanel" id="collapseListGroup1" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
 			<!--<ul class="list-group" id="lista-paraderos"  style="overflow-y: auto; max-height:300px; min-width:400px;">
 			</ul>-->
-			<div style="overflow-y: auto; max-height:300px; min-width:400px;">
+			<div style="overflow-y: auto; max-height:300px; min-width:300px;">
 				<div class="stepwizard">
 					<div class="stepwizard-row" id="lista-paraderos">
 					</div>
