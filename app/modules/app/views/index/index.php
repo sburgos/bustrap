@@ -557,7 +557,7 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#" style="margin: 0px;padding: 15px 10px; height: 45px;" onclick="volverListado();">
+				<a class="navbar-brand" href="#" style="margin: 0px;padding: 15px 10px; height: 45px; width: 100px" onclick="volverListado();">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Volver
 				</a>
 			</div>
