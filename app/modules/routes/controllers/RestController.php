@@ -39,8 +39,6 @@ class RestController extends Controller
                   ( 6371 * acos( cos( radians(".$p['latitude'].") ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(".$p['longitude'].") ) + sin( radians(".$p['latitude'].") ) * sin( radians( latitude ) ) ) ) AS distance 
               FROM 
                 route
-              WHERE
-                ida = 1
               HAVING 
                 distance < '".$km."'
               ORDER BY 
@@ -113,7 +111,7 @@ class RestController extends Controller
 		}
 
 		$buses2 = $buses;
-		$buses = null;
+		$buses = [];
 		foreach ( array_keys($buses2) as $k)
 		{
 			if( ! array_key_exists($k, $oneBus) ) {
@@ -174,7 +172,7 @@ class RestController extends Controller
 
 				if($flag)
 				{
-					$route[$k]['route'][1][] = $bus1;
+					$route[$k]['route'][0][] = $bus1;
 
 					if(empty($last))
 					{
@@ -210,7 +208,7 @@ class RestController extends Controller
 
 				if($flag)
 				{
-					$route[$k]['route'][2][] = $bus2;
+					$route[$k]['route'][1][] = $bus2;
 
 					if(empty($last))
 					{
@@ -237,7 +235,7 @@ class RestController extends Controller
 		$realRoute = [];
 		foreach( $route as $k => $r)
 		{
-			if(isset($r['route'][1]) and isset($r['route'][2]))
+			if(isset($r['route'][0]) and isset($r['route'][1]))
 			{
 				$realRoute[$k] = $r;
 			}
@@ -281,7 +279,7 @@ class RestController extends Controller
 
 				if($flag)
 				{
-					$route[$bus]['route'][1][] = $r;
+					$route[$bus]['route'][0][] = $r;
 
 					if(empty($last))
 					{
@@ -306,18 +304,64 @@ class RestController extends Controller
 		}
 
 		$realRoute = [];
+		$buses = [];
 		foreach( $route as $k => $r)
 		{
-			if(isset($r['route'][1]))
+			if(isset($r['route']))
 			{
 				$bestRoutes[$k] = $r;
 			}
 		}
 
+		$buses = [];
+		foreach($bestRoutes as $k => $bR)
+		{
+			$bb = explode("-", $k);
+			if(isset($bb[1]))
+			{
+				$buses[] = $bb[0];
+				$buses[] = $bb[1];
+			}
+			else
+			{
+				$buses[] = $bb[0];
+			}
+		}
+
+		$busesM = Bus::find()->select(['idLine', 'name', 'extraInfo'])->where(['idLine' => $buses])->indexBy('idLine')->asArray()->all();
+		foreach($busesM as $k => $v)
+		{
+			$busesM[$k]['extraInfo'] = json_decode($busesM[$k]['extraInfo'], true);
+		}
 
 		uasort($bestRoutes, function($a, $b){
 			return $a['distance'] > $b['distance'];
 		});
+
+		$finalRoute = [];
+		foreach($bestRoutes as $k => $bR)
+		{
+			$buses = [];
+			$bb = explode("-", $k);
+			if(isset($bb[1]))
+			{
+				$buses[] = $busesM[$bb[0]];
+				$buses[] = $busesM[$bb[1]];
+			}
+			else
+			{
+				$buses[] = $busesM[$bb[0]];
+			}
+			$finalRoute[] = [
+				'key' => $k,
+				'buses' => $buses,
+				'data'  => [
+					'distance'      => round($bR['distance'], 2),
+					'realDistance'  => $bR['distance'],
+					'route'         => $bR['route'],
+				],
+			];
+		}
 
 		if( ! empty($id))
 		{
@@ -334,15 +378,34 @@ class RestController extends Controller
 				}
 			}
 
-			return $this->render('short-map', [
-				'json' => $json,
-			]);
+			return $json;
 		}
 		else
 		{
-			return $this->render('short', [
-				'bus' => $bestRoutes
-			]);
+			if(empty($finalRoute))
+			{
+				throw new HttpException('400', 'No se encontraron paraderos cercanos');
+			}
+
+			return $finalRoute;
+		}
+	}
+
+	public function distance($lat1, $lon1, $lat2, $lon2, $unit = 'K')
+	{
+		$theta = $lon1 - $lon2;
+		$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+		$dist = acos($dist);
+		$dist = rad2deg($dist);
+		$miles = $dist * 60 * 1.1515;
+		$unit = strtoupper($unit);
+
+		if ($unit == "K") {
+			return ($miles * 1.609344);
+		} else if ($unit == "N") {
+			return ($miles * 0.8684);
+		} else {
+			return $miles;
 		}
 	}
 }

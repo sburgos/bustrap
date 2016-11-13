@@ -27,6 +27,12 @@ FontAwesomeAsset::register($this);
 			z-index: 10;
 		}
 	</style>
+	<script src="/js/sweetalert.min.js"></script>
+	<script src="/js/jquery-3.1.1.min.js"></script>
+
+	<link rel="stylesheet" href="/js/sweetalert.css">
+	<link rel="stylesheet" href="/css/card.css">
+	<link rel="stylesheet" href="/css/timeline.css">
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -36,5 +42,6 @@ FontAwesomeAsset::register($this);
 <?php $this->endBody() ?>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVN07EXkJ1KIKGJUE5TtB8Yixj4NX0JcE&callback=initMap" async defer></script>
+
 </html>
 <?php $this->endPage() ?>
