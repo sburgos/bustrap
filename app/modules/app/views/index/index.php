@@ -29,8 +29,8 @@
 
 	function initMap() {
 		 map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 16,
-			center: {lat: -12.0900186, lng: -77.0665256},
+			zoom: 10,
+			center: {lat: -12.0548814, lng: -77.0798989},
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		});
 
@@ -47,6 +47,7 @@
 				};
 
 				map.setCenter(pos);
+				map.setZoom(16);
 			}, function() {
 
 			});
@@ -567,7 +568,7 @@
 		<div class="panel-heading" role="tab" id="collapseListGroupHeading1">
 			<h4 class="panel-title">
 				<a href="#collapseListGroup1" class="" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseListGroup1">
-					Ruta <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+					Paraderos <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 				</a>
 			</h4>
 		</div>
