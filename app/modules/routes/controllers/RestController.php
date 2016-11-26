@@ -3,6 +3,7 @@ namespace modules\routes\controllers;
 
 use orm\bus\Route;
 use orm\bus\Bus;
+use orm\bus\SmartNode;
 use yii\rest\Controller;
 use yii\web\HttpException;
 
@@ -389,6 +390,26 @@ class RestController extends Controller
 
 			return $finalRoute;
 		}
+	}
+
+	public function getWeight($lat1, $lon1, $lat2, $lon2, $distance)
+	{
+		$smartNode = SmartNode::find()->where(['lat' => $lat1, 'lon' => $lon1]);
+		$smartNode2 = SmartNode::find()->where(['lat' => $lat2, 'lon' => $lon2]);
+
+		$sumTraffic = 0;
+		$sumVelocity = 0;
+		foreach ( $smartNode as $sN)
+		{
+			$sumTraffic+= $sN['isTraffic'];
+			$sumVelocity+= $sN['velocity'];
+		}
+
+		$weight = (($sumTraffic*$sumVelocity)/count($smartNode))*$distance;
+
+		//ESTO ES UNA PRUEBA DE GIT
+
+		return $weight;
 	}
 
 	public function distance($lat1, $lon1, $lat2, $lon2, $unit = 'K')
