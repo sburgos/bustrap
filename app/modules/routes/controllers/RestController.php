@@ -407,7 +407,6 @@ class RestController extends Controller
 
 		$weight = (($sumTraffic*$sumVelocity)/count($smartNode))*$distance;
 
-		//ESTO ES UNA PRUEBA DE GIT
 
 		return $weight;
 	}
